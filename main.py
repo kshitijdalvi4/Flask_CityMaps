@@ -91,13 +91,17 @@ def geography_info(topologies):
 def index():
     return render_template('index.html')
 
-
+@my_app.route('/app')
+def app():
+    return render_template('App.html')
 
 @my_app.route('/geography_info', methods=['POST'])
 def process_form():
     topology = request.form.getlist('topology')
     result = geography_info(topology)
-    return render_template('result.html', result=result)
+    
+    # Redirect to the '/app' page after processing the form
+    return redirect(url_for('app'))
 
 @my_app.route('/result')
 def result():
@@ -106,6 +110,7 @@ def result():
 
 if __name__ == "__main__":
     my_app.run(debug=True)
+
 
 
 
