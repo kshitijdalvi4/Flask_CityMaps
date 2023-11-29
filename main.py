@@ -79,9 +79,10 @@ def geography_info(topologies):
             "Coastal": "https://colab.research.google.com/drive/1UDU-icPSm3VenAqu051sXcPelr3Ao9jE#scrollTo=-YAFLvWWrSdM",
             "Hill": "https://colab.research.google.com/drive/1YhDcAqSENr2kVFw8rzR0qlA4fHsGmsSB#scrollTo=xSKWBKFPArKS"
         }
-
+        print("Before opening Colab notebook link")
         # Open the corresponding Colab notebook link
         webbrowser.open(topology_links[selected_topology])
+        print("Before opening Colab notebook link")
 
         return f"Launching Colab notebook for {selected_topology} with the selected description: {description}"
     else:
