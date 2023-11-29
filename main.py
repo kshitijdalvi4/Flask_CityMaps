@@ -82,7 +82,7 @@ def geography_info(topologies):
         print("Before opening Colab notebook link")
         # Open the corresponding Colab notebook link
         webbrowser.open(topology_links[selected_topology])
-        print("Before opening Colab notebook link")
+        print("After opening Colab notebook link")
 
         return f"Launching Colab notebook for {selected_topology} with the selected description: {description}"
     else:
@@ -100,7 +100,9 @@ def app():
 def process_form():
     topology = request.form.getlist('topology')
     result = geography_info(topology)
+   
     
+  
     # Redirect to the '/app' page after processing the form
     return redirect(url_for('app'))
 
